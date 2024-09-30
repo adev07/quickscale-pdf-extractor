@@ -102,10 +102,12 @@ const ChatPopup = () => {
             isExpanded
               ? "h-[96vh] lg:w-[85.7rem]"
               : "h-[96vh] md:w-[28rem] lg:w-[26rem]"
-          } w-96 overflow-hidden rounded-[20px] bg-white text-[#202a4f] shadow-lg md:w-[28rem] lg:w-[26rem]`}
+          } w-96 overflow-hidden rounded-[20px] bg-white text-[#202a4f] shadow-lg md:w-[28rem] lg:w-[26rem] py-2`}
         >
           <div className="flex justify-between border-b border-[#E2E9EF] p-4">
-            <h2 className="gap flex items-center text-lg font-bold">DocBot</h2>
+            <h2 className="gap flex items-center text-lg font-bold">
+              Doc Assistant
+            </h2>
             <div className="flex items-center space-x-2">
               {/* Expand/Compress button */}
               <button
