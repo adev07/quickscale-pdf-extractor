@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import {
-  FaRegCommentDots,
   FaUser,
   FaInfoCircle,
   FaExpandAlt,
@@ -174,7 +173,11 @@ const ChatPopup = () => {
               </div>
             ))}
             {showTooltip && (
-              <div className="absolute right-[100%] top-[50%] z-[100]  mt-[60px]  w-[330px] -translate-y-1/2 transform rounded-lg bg-white p-2 text-sm shadow-lg">
+              <div
+                className={`absolute top-[50%] z-[100] mt-[60px] w-[330px] -translate-y-1/2 transform rounded-lg bg-white p-2 text-sm shadow-lg ${
+                  isExpanded ? "right-[43.5%]" : "right-[100%]"
+                }`}
+              >
                 <p>
                   <HoverTable />
                 </p>
