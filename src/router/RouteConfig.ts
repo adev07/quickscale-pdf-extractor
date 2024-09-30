@@ -4,6 +4,12 @@ import { ICONS } from "../assets/icons";
 export const ROUTES = {
   HOME: {
     path: "/",
+    label: "Home",
+    key: "home",
+    icon: ICONS.SIDEBAR_DASHBOARD,
+  },
+  PDF_EXTRACTOR: {
+    path: "/extract-pdf",
     label: "Dashboard",
     key: "extract-pdf",
     icon: ICONS.SIDEBAR_DASHBOARD,

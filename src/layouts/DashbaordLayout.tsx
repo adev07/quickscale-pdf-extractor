@@ -25,13 +25,13 @@ const DashboardLayout = (props: Props) => {
 
   const items = [
     {
-      key: ROUTES.HOME.key,
+      key: ROUTES.PDF_EXTRACTOR.key,
       icon: <GoFileDirectoryFill className="text-[#73BDBD] text-[28px]" />,
-      label: ROUTES.HOME.label,
-      path: ROUTES.HOME.path,
+      label: ROUTES.PDF_EXTRACTOR.label,
+      path: ROUTES.PDF_EXTRACTOR.path,
     },
     {
-      key: ROUTES.HOME.key,
+      key: ROUTES.PDF_DETAILS.key,
       icon: <AiOutlineFileSearch className="text-[#73BDBD] text-[28px]" />,
       label: ROUTES.PDF_DETAILS.label,
       path: ROUTES.PDF_DETAILS.path,
@@ -55,7 +55,6 @@ const DashboardLayout = (props: Props) => {
             minWidth: !collapsed ? "260px" : "82px",
             backgroundColor: "#000031",
             minHeight: "100vh",
-            maxHeight: "100vh",
             border: 0,
             display: "flex",
             flexDirection: "column",
@@ -65,10 +64,11 @@ const DashboardLayout = (props: Props) => {
           inlineCollapsed={collapsed}
         >
           <div
-            className={`flex h-[60px] justify-start mt-8 items-center gap-3 mb-5 ${collapsed ? "pl-[14px]" : "pl-[20px]"}`}
+            onClick={() => navigate("/")}
+            className={`flex h-[60px] justify-start mt-2 items-center gap-3 mb-5 cursor-pointer  ${collapsed ? "pl-[14px]" : "pl-[20px]"}`}
           >
             {collapsed ? (
-              <img src={phoneLogo} className=" w-[34px]" />
+              <img src={phoneLogo} className=" w-[38px]" />
             ) : (
               <img src={IMAGES.FULL_LOGO} className="w-[200px]" />
             )}
@@ -87,11 +87,13 @@ const DashboardLayout = (props: Props) => {
             </div>
           ))}
         </Menu>
-        <div className={`grow bg-[#f7f4f0] relative ${location.pathname === "/profile" ? "pt-6" : "p-6"}`}>
-          <div className={`${location.pathname === "/profile" ? "px-6" : ""}`}>
+        <div className={`grow bg-[#F8F4F1] relative`}>
+          <div>
             <Topbar fileName={fileName} />
           </div>
-          {authState && props.children}
+          <div className="p-6">
+            {authState && props.children}
+          </div>
         </div>
       </div>
     </div>

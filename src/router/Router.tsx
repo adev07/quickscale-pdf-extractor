@@ -4,6 +4,7 @@ import DashboardLayout from "../layouts/DashbaordLayout";
 import ExtractPdf from "../pages/ExtractPdf/ExtractPdf";
 import PdfDetails from "../pages/PdfDetails/PdfDetails";
 import { ROUTES } from "./RouteConfig";
+import Home from "../pages/Home/Home";
 
 type Props = {};
 
@@ -12,6 +13,10 @@ const Router = (props: Props) => {
     <Routes>
       <Route
         path={ROUTES.HOME.path}
+        element={<DashboardLayout children={<Home />} />}
+      />
+      <Route
+        path={ROUTES.PDF_EXTRACTOR.path}
         element={<DashboardLayout children={<ExtractPdf />} />}
       />
       <Route
