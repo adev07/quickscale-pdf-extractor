@@ -12,7 +12,7 @@ import HoverTable from "../HoverTable/HoverTable";
 
 const ChatPopup = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isExpanded, setIsExpanded] = useState(false); // New state to track if expanded
+  const [isExpanded, setIsExpanded] = useState(false);
   const [messages, setMessages] = useState([
     {
       sender: "bot",
@@ -100,8 +100,8 @@ const ChatPopup = () => {
         <div
           className={`${
             isExpanded
-              ? "h-[96vh] md:w-[28rem] lg:w-[26rem]"
-              : "h-[96vh] lg:w-[85.7rem]"
+              ? "h-[96vh] lg:w-[85.7rem]"
+              : "h-[96vh] md:w-[28rem] lg:w-[26rem]"
           } w-96 overflow-hidden rounded-[20px] bg-white text-[#202a4f] shadow-lg md:w-[28rem] lg:w-[26rem]`}
         >
           <div className="flex justify-between border-b border-[#E2E9EF] p-4">
