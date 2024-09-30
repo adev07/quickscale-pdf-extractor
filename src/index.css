@@ -17,3 +17,19 @@ body {
 .ant-table-cell {
   color: #667085 !important;
 }
+
+.table-row-even {
+  background-color: #F9FAFB;
+  /* Light grey for even rows */
+}
+
+.table-row-odd {
+  background-color: #ffffff;
+  /* White for odd rows */
+}
+
+/* Optional: Add some padding for rows */
+.ant-table-tbody>tr>td {
+  padding: 16px;
+  /* Adjust padding as needed */
+}
