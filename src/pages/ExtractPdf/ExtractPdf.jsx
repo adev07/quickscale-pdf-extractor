@@ -43,7 +43,7 @@ const ExtractPdf = () => {
       >
         <div className="flex sm:flex-row flex-col justify-between pl-4">
           <div>
-            <h1 className="mb-2 text-start text-2xl font-bold">
+            <h1 className="mb-2 text-start text-2xl font-semibold">
               Easily Extract Data from Your PDFs
             </h1>
             <p className="mb-6 text-start">

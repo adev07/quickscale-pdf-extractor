@@ -46,7 +46,7 @@ function Home() {
           <div>
             <img className="w-[56px] object-cover" src={upload} alt="" />
             <div className="text-start mt-[24px]">
-              <h3 className="text-[#151515] text-[24px] leading-[40px] font-semibold heading">
+              <h3 className="text-[#151515] text-[24px] font-semibold heading">
                 Upload your document.
               </h3>
               <p className="text-[#585858] font-normal mt-[10px]">
@@ -58,7 +58,7 @@ function Home() {
           <div>
             <img className="w-[56px] object-cover" src={data} alt="" />
             <div className="text-start mt-[24px]">
-              <h3 className="text-[#151515] text-[24px] leading-[40px] font-semibold heading">
+              <h3 className="text-[#151515] text-[24px] font-semibold heading">
                 Get instant data extraction.
               </h3>
               <p className="text-[#585858] font-normal mt-[10px]">
@@ -70,7 +70,7 @@ function Home() {
           <div>
             <img className="w-[56px] object-cover" src={download} alt="" />
             <div className="text-start mt-[24px]">
-              <h3 className="text-[#151515] text-[24px] leading-[40px] font-semibold heading">
+              <h3 className="text-[#151515] text-[24px] font-semibold heading">
                 Download and review results.
               </h3>
               <p className="text-[#585858] font-normal mt-[10px]">
