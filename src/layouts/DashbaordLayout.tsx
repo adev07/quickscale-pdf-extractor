@@ -7,9 +7,9 @@ import { IMAGES } from "../assets/images";
 import type { MenuProps } from "antd";
 import { ROUTES } from "../router/RouteConfig";
 import phoneLogo from "../assets/icons/sidebarlogo.svg";
-import { AiOutlineFileSearch } from "react-icons/ai";
 import upload from "../assets/icons/menuItem1.svg";
 import files from "../assets/icons/files.svg";
+import ChatPopup from "../components/ChatPopup/ChatPopup";
 
 type Props = {
   children?: React.ReactNode;
@@ -94,6 +94,11 @@ const DashboardLayout = (props: Props) => {
           </div>
           <div className="p-6">
             {authState && props.children}
+          </div>
+        </div>
+        <div>
+          <div>
+            <ChatPopup />
           </div>
         </div>
       </div>
