@@ -12,8 +12,10 @@ import xml from "../../assets/icons/xml.svg";
 import last from "../../assets/icons/last.svg";
 import bg from "../../assets/icons/BG.svg";
 import wave from "../../assets/icons/wave.png";
+import { useNavigate } from "react-router-dom";
 
 function Home() {
+  const navigate = useNavigate();
   return (
     <div>
       <div className="grid grid-cols-2 px-[36px] pt-[34px] items-center justify-center gap-[32px]">
@@ -25,7 +27,10 @@ function Home() {
             Simplify document processing with automated data extraction. Save
             time and improve accuracy with just a few clicks.
           </p>
-          <button className="bg-[#70D2C2] hover:bg-[#5FB8AE] text-[#fff] text-sm mt-[30px] font-medium px-[18px] py-[12px] rounded-[10px] transition-all duration-300 ease-in-out">
+          <button
+            onClick={() => navigate("/extract-pdf")}
+            className="bg-[#70D2C2] hover:bg-[#5FB8AE] text-[#fff] text-sm mt-[30px] font-medium px-[18px] py-[12px] rounded-[10px] transition-all duration-300 ease-in-out"
+          >
             Start Extracting Now
           </button>
         </div>
@@ -107,7 +112,10 @@ function Home() {
             document types as they arise. Whether it’s a standard form or a
             unique format, we’ve got the tools to help.
           </p>
-          <button className="bg-[#70D2C2] hover:bg-[#5FB8AE] text-[#fff] text-sm mt-[30px] font-medium px-[18px] py-[12px] rounded-[10px] transition-all duration-300 ease-in-out">
+          <button
+            onClick={() => navigate("/extract-pdf")}
+            className="bg-[#70D2C2] hover:bg-[#5FB8AE] text-[#fff] text-sm mt-[30px] font-medium px-[18px] py-[12px] rounded-[10px] transition-all duration-300 ease-in-out"
+          >
             Start Extracting Now
           </button>
         </div>

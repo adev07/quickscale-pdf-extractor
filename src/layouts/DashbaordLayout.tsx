@@ -6,9 +6,10 @@ import { ICONS } from "../assets/icons";
 import { IMAGES } from "../assets/images";
 import type { MenuProps } from "antd";
 import { ROUTES } from "../router/RouteConfig";
-import phoneLogo from "../assets/dashboard/phonelogo.png";
-import { GoFileDirectoryFill } from "react-icons/go";
+import phoneLogo from "../assets/icons/sidebarlogo.svg";
 import { AiOutlineFileSearch } from "react-icons/ai";
+import upload from "../assets/icons/menuItem1.svg";
+import files from "../assets/icons/files.svg";
 
 type Props = {
   children?: React.ReactNode;
@@ -26,15 +27,15 @@ const DashboardLayout = (props: Props) => {
   const items = [
     {
       key: ROUTES.PDF_EXTRACTOR.key,
-      icon: <GoFileDirectoryFill className="text-[#73BDBD] text-[28px]" />,
+      icon: <img className="w-[28px] object-cover" src={upload} alt="" />,
       label: ROUTES.PDF_EXTRACTOR.label,
       path: ROUTES.PDF_EXTRACTOR.path,
     },
     {
-      key: ROUTES.PDF_DETAILS.key,
-      icon: <AiOutlineFileSearch className="text-[#73BDBD] text-[28px]" />,
-      label: ROUTES.PDF_DETAILS.label,
-      path: ROUTES.PDF_DETAILS.path,
+      key: ROUTES.FILE_HISTORY.key,
+      icon: <img className="w-[28px] object-cover" src={files} alt="" />,
+      label: ROUTES.FILE_HISTORY.label,
+      path: ROUTES.FILE_HISTORY.path,
     }
   ];
 
@@ -65,7 +66,7 @@ const DashboardLayout = (props: Props) => {
         >
           <div
             onClick={() => navigate("/")}
-            className={`flex h-[60px] justify-start mt-2 items-center gap-3 mb-5 cursor-pointer  ${collapsed ? "pl-[14px]" : "pl-[20px]"}`}
+            className={`flex h-[60px] justify-center mt-2 items-center gap-3 mb-5 cursor-pointer  ${collapsed ? "" : ""}`}
           >
             {collapsed ? (
               <img src={phoneLogo} className=" w-[38px]" />

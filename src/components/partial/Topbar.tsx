@@ -15,6 +15,8 @@ function TopBar({ fileName }: TopBarProps) {
       return "Extract PDF";
     } else if (location.pathname === "/pdf-details") {
       return "";
+    } else if (location.pathname === "/file-history") {
+      return "Extracted Files";
     }
     return "";
   };
@@ -24,10 +26,9 @@ function TopBar({ fileName }: TopBarProps) {
       <div className="flex items-center justify-center gap-4">
         {/* Display logo on all pages */}
         <div>
-          {(location.pathname === "/extract-pdf" || location.pathname === "/pdf-details") && (
+          {(location.pathname === "/extract-pdf" || location.pathname === "/pdf-details" || location.pathname === "/file-history") && (
             <img className="object-cover" src={logo} alt="Logo 1" />
           )}
-          {/* Conditionally display logo2 only on "/" */}
           {location.pathname === "/" && (
             <img className="object-cover" src={logo2} alt="Logo 2" />
           )}

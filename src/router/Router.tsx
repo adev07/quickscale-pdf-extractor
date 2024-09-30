@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import DashboardLayout from "../layouts/DashbaordLayout";
 import ExtractPdf from "../pages/ExtractPdf/ExtractPdf";
 import PdfDetails from "../pages/PdfDetails/PdfDetails";
+import FileHistory from "../pages/FileHistory/FileHistory";
 import { ROUTES } from "./RouteConfig";
 import Home from "../pages/Home/Home";
 
@@ -22,6 +23,10 @@ const Router = (props: Props) => {
       <Route
         path={ROUTES.PDF_DETAILS.path}
         element={<DashboardLayout children={<PdfDetails />} />}
+      />
+      <Route
+        path={ROUTES.FILE_HISTORY.path}
+        element={<DashboardLayout children={<FileHistory />} />}
       />
     </Routes>
   );

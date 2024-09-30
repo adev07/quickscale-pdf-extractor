@@ -13,3 +13,7 @@ body {
 .heading {
   font-family: 'Mattone', sans-serif;
 }
+
+.ant-table-cell {
+  color: #667085 !important;
+}
