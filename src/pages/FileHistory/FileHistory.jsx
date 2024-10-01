@@ -47,14 +47,7 @@ function FileHistory() {
       title: "Summary & Preview",
       dataIndex: "summary",
       key: "summary",
-      render: () => (
-        <button
-          className="text-blue-600 hover:underline"
-          onClick={handleViewClick}
-        >
-          View
-        </button>
-      ),
+      render: () => <button onClick={handleViewClick}>View</button>,
     },
   ];
 
