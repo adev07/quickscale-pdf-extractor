@@ -3,8 +3,15 @@ import back from "../../assets/icons/back.svg";
 import Table from "../../components/Table/Table";
 import CustomDatePicker from "../../components/partial/DatePicker";
 import CustomDropdown from "../../components/partial/Select";
+import { useNavigate } from "react-router-dom";
 
 function FileHistory() {
+  const navigate = useNavigate();
+
+  const handleViewClick = () => {
+    navigate("/extract-pdf");
+  };
+
   const columns = [
     {
       title: "Document name",
@@ -37,9 +44,17 @@ function FileHistory() {
       key: "status",
     },
     {
-      title: "Summery & Preview",
+      title: "Summary & Preview",
       dataIndex: "summary",
       key: "summary",
+      render: () => (
+        <button
+          className="text-blue-600 hover:underline"
+          onClick={handleViewClick}
+        >
+          View
+        </button>
+      ),
     },
   ];
 
