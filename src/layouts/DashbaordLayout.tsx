@@ -44,6 +44,8 @@ const DashboardLayout = (props: Props) => {
     navigate(e.path);
   };
 
+  const showChatPopup = location.pathname === "/pdf-details";
+
   return (
     <div>
       <div className="flex">
@@ -98,7 +100,7 @@ const DashboardLayout = (props: Props) => {
         </div>
         <div>
           <div>
-            <ChatPopup />
+            {showChatPopup && <ChatPopup />}
           </div>
         </div>
       </div>

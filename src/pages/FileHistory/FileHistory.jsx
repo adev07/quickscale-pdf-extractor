@@ -4,6 +4,8 @@ import Table from "../../components/Table/Table";
 import CustomDatePicker from "../../components/partial/DatePicker";
 import CustomDropdown from "../../components/partial/Select";
 import { useNavigate } from "react-router-dom";
+import { FaEye } from "react-icons/fa";
+import { FiDownload } from "react-icons/fi";
 
 function FileHistory() {
   const navigate = useNavigate();
@@ -12,16 +14,15 @@ function FileHistory() {
     navigate("/extract-pdf");
   };
 
+  const handleDownloadClick = () => {
+    // Logic to download the file
+  };
+
   const columns = [
     {
       title: "Document name",
       dataIndex: "doc_name",
       key: "doc_name",
-    },
-    {
-      title: "Invoice",
-      dataIndex: "invoice",
-      key: "invoice",
     },
     {
       title: "Document Type",
@@ -47,7 +48,22 @@ function FileHistory() {
       title: "Summary & Preview",
       dataIndex: "summary",
       key: "summary",
-      render: () => <button onClick={handleViewClick}>View</button>,
+      render: () => (
+        <div className="flex gap-4">
+          <button
+            onClick={handleViewClick}
+            className="flex items-center gap-1 text-[#73BDBD] border border-[#70D2C2] px-2 rounded"
+          >
+            <FaEye size={18} /> View
+          </button>
+          <button
+            onClick={handleDownloadClick}
+            className="bg-[#70D2C2] p-2 rounded text-white"
+          >
+            <FiDownload size={20} />
+          </button>
+        </div>
+      ),
     },
   ];
 
@@ -55,7 +71,6 @@ function FileHistory() {
     {
       key: "1",
       doc_name: "2015 - 2016 Financial details.pdf",
-      invoice: "$44.00",
       doc_type: "PDF",
       language: "English",
       date: "23 Sep 2024",
@@ -65,7 +80,6 @@ function FileHistory() {
     {
       key: "2",
       doc_name: "2015 - 2016 Financial details.pdf",
-      invoice: "$44.00",
       doc_type: "PDF",
       language: "English",
       date: "23 Sep 2024",
@@ -75,7 +89,6 @@ function FileHistory() {
     {
       key: "3",
       doc_name: "2015 - 2016 Financial details.pdf",
-      invoice: "$44.00",
       doc_type: "PDF",
       language: "English",
       date: "23 Sep 2024",
@@ -85,7 +98,6 @@ function FileHistory() {
     {
       key: "4",
       doc_name: "2015 - 2016 Financial details.pdf",
-      invoice: "$44.00",
       doc_type: "PDF",
       language: "English",
       date: "23 Sep 2024",
@@ -95,7 +107,6 @@ function FileHistory() {
     {
       key: "5",
       doc_name: "2015 - 2016 Financial details.pdf",
-      invoice: "$44.00",
       doc_type: "PDF",
       language: "English",
       date: "23 Sep 2024",
@@ -105,7 +116,6 @@ function FileHistory() {
     {
       key: "6",
       doc_name: "2015 - 2016 Financial details.pdf",
-      invoice: "$44.00",
       doc_type: "PDF",
       language: "English",
       date: "23 Sep 2024",
@@ -115,7 +125,6 @@ function FileHistory() {
     {
       key: "7",
       doc_name: "2015 - 2016 Financial details.pdf",
-      invoice: "$44.00",
       doc_type: "PDF",
       language: "English",
       date: "23 Sep 2024",
@@ -125,7 +134,6 @@ function FileHistory() {
     {
       key: "8",
       doc_name: "2015 - 2016 Financial details.pdf",
-      invoice: "$44.00",
       doc_type: "PDF",
       language: "English",
       date: "23 Sep 2024",
@@ -135,7 +143,6 @@ function FileHistory() {
     {
       key: "9",
       doc_name: "2015 - 2016 Financial details.pdf",
-      invoice: "$44.00",
       doc_type: "PDF",
       language: "English",
       date: "23 Sep 2024",
@@ -146,13 +153,7 @@ function FileHistory() {
 
   return (
     <div className="bg-[#fff] min-h-screen rounded-[12px] shadow p-[30px]">
-      <div className="flex items-center justify-between ">
-        <div className="flex gap-5 items-center">
-          <img src={back} alt="" />
-          <h1 className="text-[#151515] text-[26px] leading-[36px] font-semibold">
-            Previous File
-          </h1>
-        </div>
+      <div className="flex items-center justify-end ">
         <div className="flex gap-4">
           <CustomDropdown />
           <CustomDatePicker />

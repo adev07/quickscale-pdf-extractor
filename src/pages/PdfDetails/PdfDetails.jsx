@@ -294,7 +294,7 @@ const PdfDetails = () => {
 
   return (
     <div className="mt-4">
-      <div className="grid min-h-screen grid-cols-6 gap-4 rounded-md bg-white p-4 shadow-md md:grid-cols-6 md:p-6">
+      <div className="grid min-h-screen grid-cols-6 gap-4 rounded-md bg-white p-4 shadow-md md:grid-cols-7 md:p-6">
         <div className="col-span-6 rounded-md xl:col-span-4">
           <div className="mb-4 flex flex-col items-start justify-between">
             <div className="mb-4 ml-4 flex items-center justify-start gap-4 sm:ml-0 md:mb-0">
@@ -327,7 +327,7 @@ const PdfDetails = () => {
               </div>
             </div>
           </div>
-          <div className="max-h-[calc(100vh-160px)] w-full overflow-auto">
+          <div className="max-h-[calc(100vh)] w-full overflow-auto">
             <div className="w-full min-w-[40rem] rounded-md border">
               {extractedData.map((sectionData, sectionIndex) => (
                 <div key={sectionIndex}>
@@ -398,14 +398,14 @@ const PdfDetails = () => {
             </div>
           </div>
         </div>
-        <div className="col-span-6 rounded-md xl:col-span-2 xl:py-1">
+        <div className="col-span-6 rounded-md xl:col-span-3 xl:py-1">
           <div className="text-start">
             <h2 className="mb-2 ml-4 text-xl font-semibold sm:ml-0 md:text-2xl">
               Original PDF
             </h2>
-            <div className=" mt-[64px] w-full overflow-auto">
+            <div className="mt-[64px] w-full overflow-auto">
               <div
-                className=" aspect-[3/4] w-full rounded-md border shadow-sm"
+                className="aspect-[3/4] w-full rounded-md border shadow-sm"
                 key={page}
               >
                 {pdfUrl ? (
@@ -414,7 +414,7 @@ const PdfDetails = () => {
                   >
                     <Viewer
                       fileUrl={pdfUrl}
-                      defaultScale={SpecialZoomLevel.PageFit}
+                      defaultScale={0.75}
                       plugins={[
                         defaultLayoutPluginInstance,
                         highlightPluginInstance,

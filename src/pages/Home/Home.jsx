@@ -21,7 +21,7 @@ function Home() {
       <div className="grid grid-cols-2 px-[36px] pt-[34px] items-center justify-center gap-[32px]">
         <div className="col-span-1">
           <h1 className="heading font-semibold text-[50px] leading-[64px] text-[#151515]">
-            Extract Structured Data from PDFs in Seconds with Doc Assistant
+            Doc Assistant
           </h1>
           <p className="text-[#585858] leading-[30px] text-[16px] font-normal mt-[20px]">
             Simplify document processing with automated data extraction. Save

@@ -24,6 +24,7 @@ const ChatPopup = () => {
   const [typingMessage, setTypingMessage] = useState("");
   const [showTooltip, setShowTooltip] = useState(false);
   const messagesEndRef = useRef(null);
+  const textareaRef = useRef(null);
 
   const togglePopup = () => {
     setIsOpen(!isOpen);
@@ -44,8 +45,12 @@ const ChatPopup = () => {
   };
 
   const handleKeyPress = (e) => {
-    if (e.key === "Enter") {
-      handleSend();
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault(); // Prevent creating a new line on Enter
+      handleSend(); // Call the function to send the message
+    } else if (e.key === "Enter" && e.shiftKey) {
+      e.preventDefault(); // Prevent default behavior of Shift+Enter
+      setInput((prevInput) => prevInput + "\n"); // Add new line manually
     }
   };
 
@@ -146,7 +151,9 @@ const ChatPopup = () => {
                   </div>
                 )}
                 <span
-                  className={`inline-block max-w-[340px] rounded-xl px-2 py-1 ${
+                  className={`inline-block ${
+                    isExpanded ? "max-w-[520px]" : "max-w-[340px]"
+                  } rounded-xl px-2 py-1 ${
                     msg.sender === "user"
                       ? "bg-[#70D2C2] text-white"
                       : "text-black bg-gray-200"
@@ -175,7 +182,7 @@ const ChatPopup = () => {
             {showTooltip && (
               <div
                 className={`absolute top-[50%] z-[100] mt-[60px] w-[330px] -translate-y-1/2 transform rounded-lg bg-white p-2 text-sm shadow-lg ${
-                  isExpanded ? "right-[43.5%]" : "right-[100%]"
+                  isExpanded ? "right-[30%]" : "right-[100%]"
                 }`}
               >
                 <p>
@@ -188,7 +195,11 @@ const ChatPopup = () => {
                 <div className="mr-2 flex h-8 min-w-8 items-center justify-center rounded-full bg-[#70D2C2]">
                   <img src={logo} className="w-[18px]" alt="" />
                 </div>
-                <span className="text-black inline-block max-w-[340px] rounded-xl bg-gray-200 px-2 py-1">
+                <span
+                  className={`text-black inline-block ${
+                    isExpanded ? "max-w-[520px]" : "max-w-[340px]"
+                  } rounded-xl bg-gray-200 px-2 py-1`}
+                >
                   {typingMessage}
                 </span>
               </div>
@@ -197,13 +208,12 @@ const ChatPopup = () => {
           </div>
           <div className="border-t border-[#E2E9E5] p-4">
             <div className="relative flex items-center">
-              <input
-                type="text"
+              <textarea
                 className="text-black h-12 w-full rounded-full bg-[#E0E6E5] px-4 py-2 pr-12 placeholder-gray-500 focus:outline-none"
                 placeholder="Type your message..."
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                onKeyPress={handleKeyPress}
+                onKeyDown={handleKeyPress}
               />
               <button
                 className="absolute right-4 flex h-8 w-8 items-center justify-center rounded-full bg-[#70D2C2]"
