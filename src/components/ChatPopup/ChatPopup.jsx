@@ -8,6 +8,7 @@ import {
 import { MdClose, MdSend } from "react-icons/md";
 import logo from "../../assets/dashboard/phonelogo.png";
 import HoverTable from "../HoverTable/HoverTable";
+import ReactMarkdown from "react-markdown";
 
 const ChatPopup = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -159,11 +160,11 @@ const ChatPopup = () => {
                       : "text-black bg-gray-200"
                   }`}
                 >
-                  {msg.text}
+                  <ReactMarkdown>{msg.text}</ReactMarkdown>
                 </span>
                 {msg.sender === "bot" &&
                   msg.info ===
-                    "Sure! The total revenue extracted from the document is xxxyxx. You can find it in the xyz field in the extracted data panel. Would you like to make any changes?" && (
+                    "Sure! The total revenue extracted from the document is **xxxyxx**. You can find it in the **xyz** field in the extracted data panel. Would you like to make any changes?" && (
                     <div className="relative ml-2 mt-[65px] flex h-[30px] min-w-[30px] cursor-pointer items-center justify-center rounded-full border border-[#A7C9C9]">
                       <FaInfoCircle
                         className="text-[#A7C9C9]"
@@ -200,7 +201,7 @@ const ChatPopup = () => {
                     isExpanded ? "max-w-[520px]" : "max-w-[340px]"
                   } rounded-xl bg-gray-200 px-2 py-1`}
                 >
-                  {typingMessage}
+                  <ReactMarkdown>{typingMessage}</ReactMarkdown>
                 </span>
               </div>
             )}
