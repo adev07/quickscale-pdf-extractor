@@ -9,6 +9,7 @@ import { FaArrowLeft, FaChevronDown } from "react-icons/fa";
 import { Checkbox } from "antd";
 import { pdfjs } from "react-pdf";
 import { AiOutlineEdit } from "react-icons/ai";
+import examplePDF from "../../assets/Strata_Downloads_EPC.pdf";
 
 import pdfjsWorker from "pdfjs-dist/build/pdf.worker.entry";
 import { highlightPlugin, Trigger } from "@react-pdf-viewer/highlight";
@@ -291,6 +292,10 @@ const PdfDetails = () => {
   const [page, setPage] = useState(1);
 
   const pageNavigationPluginInstance = pageNavigationPlugin();
+
+  useEffect(() => {
+    setPdfUrl(examplePDF);
+  }, []);
 
   return (
     <div className="mt-4">

@@ -11,7 +11,7 @@ function FileHistory() {
   const navigate = useNavigate();
 
   const handleViewClick = () => {
-    navigate("/extract-pdf");
+    navigate("/pdf-details");
   };
 
   const handleDownloadClick = () => {
