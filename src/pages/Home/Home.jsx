@@ -20,7 +20,7 @@ function Home() {
     <div>
       <div className="grid grid-cols-1 md:grid-cols-2 px-4 md:px-[36px] pt-4 md:pt-[34px] items-center justify-center gap-[20px] md:gap-[32px]">
         <div className="col-span-1">
-          <h1 className="heading font-semibold text-[26px] md:text-[38px] leading-[40px] md:leading-[64px] text-[#151515]">
+          <h1 className="heading font-semibold text-[26px] md:text-[50px] leading-[40px] md:leading-[64px] text-[#151515]">
             EXTRACT DATA FROM YOUR PDF IN SECONDS
           </h1>
           <p className="text-[#585858] leading-[24px] md:leading-[30px] text-[14px] md:text-[16px] font-normal mt-[16px] md:mt-[20px]">
