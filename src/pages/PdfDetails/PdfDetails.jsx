@@ -293,6 +293,7 @@ const PdfDetails = () => {
 
   const pageNavigationPluginInstance = pageNavigationPlugin();
 
+  /// remove to remove pdf
   useEffect(() => {
     setPdfUrl(examplePDF);
   }, []);

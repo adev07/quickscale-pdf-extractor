@@ -47,17 +47,17 @@ const ChatPopup = () => {
 
   const handleKeyPress = (e) => {
     if (e.key === "Enter" && !e.shiftKey) {
-      e.preventDefault(); // Prevent creating a new line on Enter
-      handleSend(); // Call the function to send the message
+      e.preventDefault();
+      handleSend();
     } else if (e.key === "Enter" && e.shiftKey) {
-      e.preventDefault(); // Prevent default behavior of Shift+Enter
-      setInput((prevInput) => prevInput + "\n"); // Add new line manually
+      e.preventDefault();
+      setInput((prevInput) => prevInput + "\n");
     }
   };
 
   const simulateBotResponse = (currentMessages) => {
     const botMessage =
-      "Sure! The total revenue extracted from the document is xxxyxx. You can find it in the xyz field in the extracted data panel. Would you like to make any changes?";
+      "Sure! The total revenue extracted from the document is **xxxyxx**. You can find it in the **xyz** field in the extracted data panel. *Would you like to make any changes?*";
     setTypingMessage("");
     let index = -1;
 
@@ -164,7 +164,7 @@ const ChatPopup = () => {
                 </span>
                 {msg.sender === "bot" &&
                   msg.info ===
-                    "Sure! The total revenue extracted from the document is **xxxyxx**. You can find it in the **xyz** field in the extracted data panel. Would you like to make any changes?" && (
+                    "Sure! The total revenue extracted from the document is xxxyxx. You can find it in the xyz field in the extracted data panel. Would you like to make any changes?" && (
                     <div className="relative ml-2 mt-[65px] flex h-[30px] min-w-[30px] cursor-pointer items-center justify-center rounded-full border border-[#A7C9C9]">
                       <FaInfoCircle
                         className="text-[#A7C9C9]"
@@ -173,9 +173,13 @@ const ChatPopup = () => {
                       />
                     </div>
                   )}
-                {msg.sender === "user" && (
-                  <div className="ml-2 flex h-8 min-w-8 items-center justify-center rounded-full bg-[#70D2C2]">
-                    <FaUser className="text-white" size={16} />
+                {msg.info && msg.info.includes("total revenue") && (
+                  <div className="relative ml-2 flex h-[30px] min-w-[30px] cursor-pointer items-center justify-center rounded-full border border-[#A7C9C9] mt-6">
+                    <FaInfoCircle
+                      className="text-[#A7C9C9]"
+                      size={16}
+                      onClick={toggleTooltip}
+                    />
                   </div>
                 )}
               </div>
